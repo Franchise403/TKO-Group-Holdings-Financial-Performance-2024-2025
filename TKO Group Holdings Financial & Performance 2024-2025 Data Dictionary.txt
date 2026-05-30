@@ -1,0 +1,120 @@
+TKO Financials & UFC/WWE Performance – Data Dictionary
+
+Purpose:
+Contains quarterly financial and operational performance metrics for TKO Group Holdings, UFC, and WWE. The dataset is designed for business intelligence analysis, including revenue trends, revenue stream comparison, event activity, attendance, and ticket distribution.
+
+Grain: 1 row = 1 fiscal quarter
+
+
+TKOPerformance.csv
+
+Purpose:
+Contains quarter-level consolidated TKO financial performance, revenue stream breakdowns, and brand-level revenue totals for UFC, WWE, IMG, and Other business segments.
+
+Grain: 1 row = 1 fiscal quarter
+
+Columns:
+
+| Column Name |	Data Type | Description	| Example |
+|------------|------------|------------|-----------|
+| Quarter | Text | Fiscal quarter label | 2024Q1 |
+| QuarterNumber | Integer | Numeric quarter value | 1 |
+| QuarterStartDate | Date | First date of the fiscal quarter | 2024-01-01 |
+| QuarterEndDate | Date | Last date of the fiscal quarter | 2024-03-31 |
+| TKO_TotalRevenue_M | Decimal | Total TKO revenue in millions USD | 629.7 |
+| TKO_AdjustedEBITDA_M | Decimal | TKO adjusted EBITDA in millions USD | 282.2 |
+| TKO_OperatingExpenses_M | Decimal | TKO operating expenses in millions USD | 840 |
+| TKO_OperatingIncome_M | Decimal | TKO operating income in millions USD | -210.3 |
+| TKO_NetIncome_M | Decimal | TKO net income in millions USD | -249.5 |
+| TKO_MediaRightsRevenue_M | Decimal | TKO media rights revenue in millions USD | 435.6 |
+| TKO_SponsorshipRevenue_M | Decimal | TKO sponsorship revenue in millions USD | 62.4 |
+| TKO_LiveEventRevenue_M | Decimal | TKO live event revenue in millions USD | 85.5 |
+| TKO_ConsumerProductsRevenue_M | Decimal | TKO consumer products revenue in millions USD | 46.2 |
+| UFC_TotalRevenue_M | Decimal | UFC total revenue in millions USD | 313 |
+| WWE_TotalRevenue_M | Decimal | WWE total revenue in millions USD | 316.7 |
+| IMG_TotalRevenue_M | Decimal | IMG total revenue in millions USD | 476.3 |
+| Other_TotalRevenue_M | Decimal | Other business segment revenue in millions USD | 41.3 |
+
+
+UFCPerformance.csv
+
+Purpose:
+Contains quarter-level UFC financial, attendance, and ticketed event performance metrics.
+
+Grain: 1 row = 1 fiscal quarter
+
+Columns:
+
+| Column Name |	Data Type | Description	| Example |
+|------------|------------|------------|-----------|
+| Quarter | Text | Fiscal quarter label | 2024Q1 |
+| QuarterNumber | Integer | Numeric quarter value | 1 |
+| QuarterStartDate | Date | First date of the fiscal quarter | 2024-01-01 |
+| QuarterEndDate | Date | Last date of the fiscal quarter | 2024-03-31 |
+| UFC_TotalRevenue_M | Decimal | UFC total revenue in millions USD | 313 |
+| UFC_MediaRightsRevenue_M | Decimal | UFC media rights revenue in millions USD | 214.5 |
+| UFC_LiveEventRevenue_M | Decimal | UFC live event revenue in millions USD | 35.3 |
+| UFC_SponsorshipRevenue_M | Decimal | UFC sponsorship revenue in millions USD | 48.6 |
+| UFC_ConsumerProductsRevenue_M | Decimal | UFC consumer products revenue in millions USD | 11 |
+| UFC_AnnouncedAttendanceTotal | Integer | Total announced UFC attendance for the quarter | 89654 |
+| UFC_AnnouncedAttendancePLE | Integer | Announced attendance for UFC premium live events / PPV events | 55910 |
+| UFC_AnnouncedAttendanceBroadcast | Integer | Announced attendance for UFC broadcast events | 33744 |
+| UFC_TicketedEventsTotal | Integer | Total number of ticketed UFC events in the quarter | 5 |
+| UFC_TicketedEventsPLE | Integer | Number of ticketed UFC premium live events / PPV events | 3 |
+| UFC_TicketedEventsBroadcast | Integer | Number of ticketed UFC broadcast events | 2 |
+
+
+WWEPerformance.csv
+
+Purpose:
+Contains quarter-level WWE financial, estimated ticket distribution, and ticketed event performance metrics.
+
+Grain: 1 row = 1 fiscal quarter
+
+Columns:
+
+| Column Name |	Data Type | Description	| Example |
+|------------|------------|------------|-----------|
+| Quarter | Text | Fiscal quarter label | 2024Q1 |
+| QuarterNumber | Integer | Numeric quarter value | 1 |
+| QuarterStartDate | Date | First date of the fiscal quarter | 2024-01-01 |
+| QuarterEndDate | Date | Last date of the fiscal quarter | 2024-03-31 |
+| WWE_TotalRevenue_M | Decimal | WWE total revenue in millions USD | 316.7 |
+| WWE_MediaRightsRevenue_M | Decimal | WWE media rights revenue in millions USD | 221.1 |
+| WWE_LiveEventRevenue_M | Decimal | WWE live event revenue in millions USD | 50.2 |
+| WWE_SponsorshipRevenue_M | Decimal | WWE sponsorship revenue in millions USD | 13.8 |
+| WWE_ConsumerProductsRevenue_M | Decimal | WWE consumer products revenue in millions USD | 31.6 |
+| WWE_EstimatedTicketsDistributedTotal | Integer | Estimated total WWE tickets distributed for the quarter | 489736 |
+| WWE_EstimatedTicketsDistributedPLE | Integer | Estimated tickets distributed for WWE premium live events | 94009 |
+| WWE_EstimatedTicketsDistributedRAW | Integer | Estimated tickets distributed for RAW events | 148434 |
+| WWE_EstimatedTicketsDistributedSmackDown | Integer | Estimated tickets distributed for SmackDown events | 134201 |
+| WWE_EstimatedTicketsDistributedLiveEvent | Integer | Estimated tickets distributed for WWE non-televised live events | 109122 |
+| WWE_EstimatedTicketsDistributedNXT | Integer | Estimated tickets distributed for NXT events | 3970 |
+| WWE_TicketedEventsTotal | Integer | Total number of ticketed WWE events in the quarter | 49 |
+| WWE_TicketedEventsPLE | Integer | Number of ticketed WWE premium live events | 2 |
+| WWE_TicketedEventsRAW | Integer | Number of ticketed RAW events | 13 |
+| WWE_TicketedEventsSmackDown | Integer | Number of ticketed SmackDown events | 12 |
+| WWE_TicketedEventsLiveEvent | Integer | Number of ticketed non-televised WWE live events | 20 |
+| WWE_TicketedEventsNXT | Integer | Number of ticketed NXT events | 1 |
+
+
+Notes:
+-Financial columns ending in _M are stored in millions of USD.
+-Revenue stream columns allow comparison across media rights, live events, sponsorship, and consumer products.
+-UFC attendance values use announced attendance figures.
+-WWE ticket distribution values are estimated and should be treated as directional rather than official audited totals.
+-Ticketed event counts can be used to calculate average attendance or estimated tickets distributed per event.
+-QuarterStartDate and QuarterEndDate support time-based filtering and date table relationships in Power BI or SQL.
+-QuarterNumber can be used for proper quarter sorting in reports and dashboards.
+-IMG_TotalRevenue_M and Other_TotalRevenue_M contain NULL values for portions of 2024 because these business segment revenues were not separately reported in available TKO financial disclosures during that reporting period.
+
+
+References:
+-TKO financial data was collected from TKO Group Holdings quarterly financial reports available through the TKO Investor Relations website: https://investor.tkogrp.com/overview/default.aspx
+-WWE estimated ticket distribution data was collected from Wrestlenomics WrestleTix reports: https://wrestlenomics.com/wrestletix
+-UFC attendance data was collected from individual UFC event pages available on Wikipedia.
+
+Data Source Notes:
+-Financial metrics are reported as disclosed in official TKO quarterly earnings reports.
+-WWE ticket distribution figures are estimates compiled from WrestleTix reporting and should not be considered official WWE attendance records.
+-UFC attendance figures are based on announced attendance reported for individual events and aggregated to the fiscal quarter level.
